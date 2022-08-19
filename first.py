@@ -22,6 +22,6 @@ MINIMAL_EXAMPLE_DATA = {
 }
 
 
-st.header('Anthony Charty Wrapper Component')
+st.header('PBS Charty Wrapper Component')
 
 streamlit_charty("Worlde",opt=MINIMAL_EXAMPLE_DATA)
