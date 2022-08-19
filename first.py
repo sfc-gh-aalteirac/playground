@@ -1,11 +1,27 @@
 import streamlit as st
-import pandas as pd
-import pandas_profiling
-from streamlit_pandas_profiling import st_profile_report
+from charty import streamlit_charty
 
-st.header('`streamlit_pandas_profiling`')
+MINIMAL_EXAMPLE_DATA = {
+  "type": 'line',
+  "data": {
+    "x": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25],
+    "y0": [-20, 0, 20, 23, 25, 28, 40, 50, 33, 23, 14, 3, 15, 16, 18, 20, 34, 44, 30, 31, 43, 22, 15, 27, 23]
+  },
+  "colors": {
+    "y0": '#5FB641',
+  },
+  "names": {
+    "y0": 'Temperature, C°'
+  },
+  "startX": 1,
+  "endX": 25,
+  "xAxisStep": 2,
+#   showPreview: false,
+#   showRangeText: false,
+  "showLegendTitle": False
+}
 
-df = pd.read_csv('https://raw.githubusercontent.com/Opensourcefordatascience/Data-sets/master/automotive_data.csv')
 
-pr = df.profile_report()
-st_profile_report(pr)
+st.header('Anthony Charty Test Component')
+
+streamlit_charty("Worlde",opt=MINIMAL_EXAMPLE_DATA)
